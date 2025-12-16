@@ -234,7 +234,7 @@ function googlemeet_print_recordings($googlemeet, $cm, $context) {
 
         $redordingname = '"' . substr($googlemeet->url, 24, 12) . '" ';
         if ($googlemeet->originalname) {
-            $redordingname .= get_string('or', 'googlemeet') . ' "' . $googlemeet->originalname . '"';
+            $redordingname .= get_string('or', 'googlemeet') . ' "' . substr($googlemeet->originalname, 0, -7) . '"';
         }
 
         $loginhtml = '';
