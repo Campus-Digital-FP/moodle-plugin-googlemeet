@@ -366,7 +366,7 @@ class client {
                             ];
                             $permissionrawpost = [
                                 "role" => "reader",
-                                "type" => "domain"
+                                "type" => "anyone"
                             ];
                             helper::request($service, 'create_permission', $permissionparams, json_encode($permissionrawpost));
                         }
