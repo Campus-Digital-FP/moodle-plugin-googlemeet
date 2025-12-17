@@ -364,9 +364,12 @@ class client {
                                 'fileid' => $recording->id,
                                 'fields' => 'id'
                             ];
+                            $useremail = $this->get_email();
+                            $domain = substr($useremail, strpos($useremail, '@') + 1);
                             $permissionrawpost = [
                                 "role" => "reader",
-                                "type" => "anyone"
+                                "type" => "domain",
+                                "domain" => $domain
                             ];
                             helper::request($service, 'create_permission', $permissionparams, json_encode($permissionrawpost));
                         }
